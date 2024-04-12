@@ -16,7 +16,7 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Trigger Azure ML Training Job
-      run: az ml job create --file MS-MLops/src/job.yml  --workspace-name MS-Mlops --resource-group cloud-shell-storage-centralindia
+      run: az ml job create --file src/job.yml  --workspace-name MS-Mlops --resource-group cloud-shell-storage-centralindia
 
 
 
