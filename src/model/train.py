@@ -14,7 +14,7 @@ from mlflow.sklearn import autolog
 def main(args):
     # TO DO: enable autologging
     autolog()
-    
+
     # read data
     df = get_csvs_df(args.training_data)
 
@@ -38,7 +38,8 @@ def get_csvs_df(path):
 def split_data(data):
     X = data.drop("Diabetic", axis=1)
     Y = data["Diabetic"]
-    X_Tr,X_Te,Y_Tr,Y_Te=train_test_split(X, Y, test_size=0.30, random_state=0)
+    X_Tr, X_Te, Y_Tr, Y_Te = train_test_split(X, Y, \
+                                              test_size=0.30, random_state=0)
     return X_Tr, X_Te, Y_Tr, Y_Te
 
 
