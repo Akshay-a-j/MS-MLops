@@ -1,8 +1,7 @@
 name: Code checks
 
 on:
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   job1:
@@ -21,7 +20,4 @@ jobs:
     - name: Run linting tests
       run: | 
         flake8 src/model/
-    - name: Placeholder
-      run: |
-        echo "Will add code checks here in next challenge"
 
