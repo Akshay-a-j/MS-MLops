@@ -39,8 +39,7 @@ def split_data(data):
     X = data.drop("Diabetic", axis=1)
     Y = data["Diabetic"]
     X_Tr, X_Te, Y_Tr, Y_Te = train_test_split(X, Y,
-                                              test_size=0.30, 
-                                              random_state=0)
+                                              test_size=0.30, random_state=0)
     return X_Tr, X_Te, Y_Tr, Y_Te
 
 
