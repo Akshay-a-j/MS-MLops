@@ -13,7 +13,7 @@ from mlflow.sklearn import autolog
 def main(args):
     # TO DO: enable autologging
     autolog()
-    
+
     # read data
     df = get_csvs_df(args.training_data)
 
@@ -35,11 +35,12 @@ def get_csvs_df(path):
 
 # TO DO: add function to split data
 def split_data(data):
-    X = data.drop("Diabetic", axis=1) 
+    X = data.drop("Diabetic", axis=1)
     Y = data["Diabetic"]
     X_Train, X_Test, Y_Train, Y_Test = train_test_split(X, Y, test_size=0.30, random_state=0)
     return X_Train, X_Test, Y_Train, Y_Test
-    
+
+
 def train_model(reg_rate, X_train, X_test, y_train, y_test):
     # train model
     LogisticRegression(C=1/reg_rate, solver="liblinear").fit(X_train, y_train)
@@ -60,6 +61,7 @@ def parse_args():
 
     # return args
     return args
+
 
 # run script
 if __name__ == "__main__":
